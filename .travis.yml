@@ -18,7 +18,7 @@ install:
   - pip install $DJANGO
 
 script:
-  - tests/runtests.py
+  - python tests/runtests.py
 
 matrix:
   exclude:

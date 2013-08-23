@@ -1,6 +1,6 @@
-# Django-pjaxr
+# django-pjaxr
 
-## How to install Django-pjaxr?
+## How to install django-pjaxr?
 
 There are just two steps needed to install django-pjaxr:
 

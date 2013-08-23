@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<head>
+    <title>{% block title %}{% block inner_title %}{% endblock inner_title %}{% endblock title %}</title>
+    {% block inner_head %}{% endblock inner_head %}
+</head>
+<body data-pjaxr-namespace="{% block pjaxr_namespace %}{% endblock pjaxr_namespace %}">
+    {% block site %}
+        <div id="site">
+            {% block page %}
+                {% block content %}
+                    {% block inner_content %}{% endblock inner_content %}
+                {% endblock content %}
+            {% endblock page %}
+        </div>
+    {% endblock site %}
+    {% block additional_pjax_includes %}{% endblock additional_pjax_includes %}
+</body>
+</html>

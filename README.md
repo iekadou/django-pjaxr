@@ -1,4 +1,4 @@
-# django-pjaxr
+# django-pjaxr [![Build Status](https://secure.travis-ci.org/iekadou/django-pjaxr.png)](http://travis-ci.org/iekadou/django-pjaxr)
 
 ## How to install django-pjaxr?
 

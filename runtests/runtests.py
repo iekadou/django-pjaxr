@@ -2,7 +2,7 @@ import os
 import sys
 
 
-path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+path = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '..'))
 sys.path.append(path)
 print sys.path
 print os.path.abspath(__file__)

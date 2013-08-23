@@ -23,7 +23,7 @@ class PjaxrExtendsNode(ExtendsNode):
             except KeyError:
                 self.parent_name = self.pjaxr_template
             else:
-                if namespace.startswith(self.pjaxr_namespace.var):
+                if namespace.startswith(self.pjaxr_namespace.resolve(context)):
                     self.parent_name = self.pjaxr_template
 
         return super(PjaxrExtendsNode, self).get_parent(context)

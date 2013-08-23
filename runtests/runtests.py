@@ -2,8 +2,12 @@ import os
 import sys
 
 
-sys.path.append(os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'django_pjaxr.runtests.settings'
+path = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+sys.path.append(path)
+print sys.path
+print os.path.abspath(__file__)
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_pjaxr.test_settings'
+
 
 import django
 from django.conf import settings

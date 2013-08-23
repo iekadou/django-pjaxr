@@ -1,16 +1,11 @@
 import os
 import sys
 
-# local testing
+
+# adjusting sys.path
 path = os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '..'))
 sys.path.append(path)
 
-# travis testing
-path = os.path.abspath(os.path.join(path, '..'))
-sys.path.append(path)
-
-print sys.path
-print os.path.abspath(__file__)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'django_pjaxr.test_settings'
 
 

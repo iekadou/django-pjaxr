@@ -16,9 +16,9 @@ There are just two steps needed to install django-pjaxr:
 	from django.template import add_to_builtins
 	add_to_builtins('django_pjaxr.templatetags.pjaxr_extends')
 	
-	TEMPLATE_CONTEXT_PROCESSORS += ('django_pjaxr.context_processors.pjaxr_information',)
-	
 	INSTALLED_APPS += ('django_pjaxr', )
+	
+	TEMPLATE_CONTEXT_PROCESSORS += ('django_pjaxr.context_processors.pjaxr_information',)
 	
 	DEFAULT_PJAXR_TEMPLATE = "django_pjaxr/pjaxr.html"
 	```

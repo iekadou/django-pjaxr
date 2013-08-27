@@ -79,4 +79,3 @@ setup(name='django-pjaxr',
 #     Queries directly to my email are likely to receive a canned response.
 #
 #     Many thanks for your understanding.
-      

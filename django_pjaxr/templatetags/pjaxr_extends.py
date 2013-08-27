@@ -16,7 +16,7 @@ class PjaxrExtendsNode(ExtendsNode):
         return '<PjaxrExtendsNode: extends %s>' % self.parent_name.token
 
     def get_parent(self, context):
-        pjaxr_context = {k: v for d in context.dicts for k, v in d.items() if (k == 'pjaxr' or k == 'pjaxr_namespace')}
+        pjaxr_context = dict((k, v) for d in context.dicts for k, v in d.items() if (k == 'pjaxr' or k == 'pjaxr_namespace'))
         if pjaxr_context.get('pjaxr', False):
             try:
                 namespace = pjaxr_context['pjaxr_namespace']

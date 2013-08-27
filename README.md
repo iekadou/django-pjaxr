@@ -26,4 +26,6 @@ There are just two steps needed to install django-pjaxr:
 ## What do you need for django-pjaxr?
 
 1. Django >= 1.3
-2. jquery-pjaxr
+2. [jquery-pjaxr](https://github.com/minddust/jquery-pjaxr)
+
+Happy speeding up your django project!

@@ -22,3 +22,8 @@ There are just two steps needed to install django-pjaxr:
 	
 	DEFAULT_PJAXR_TEMPLATE = "django_pjaxr/pjaxr.html"
 	```
+
+## What do you need for django-pjaxr?
+
+1. Django >= 1.3
+2. jquery-pjaxr

@@ -29,3 +29,5 @@ There are just two steps needed to install django-pjaxr:
 2. [jquery-pjaxr](https://github.com/minddust/jquery-pjaxr)
 
 Happy speeding up your django project!
+
+For further information read [django-pjaxr on noxic-action.de](http://www.noxic-action.de/page/programming/django-pjaxr)

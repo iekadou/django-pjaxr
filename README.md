@@ -28,6 +28,14 @@ There are just two steps needed to install django-pjaxr:
 1. Django >= 1.3
 2. [jquery-pjaxr](https://github.com/minddust/jquery-pjaxr)
 
+## Projects using django-pjaxr
+
+1. [noxic-action.de](http://www.noxic-action.de/page/)
+1. [socialfunders.org](https://socialfunders.org/)
+1. [minddust.com](https://minddust.com/)
+
+If you are using django-pjaxr, please contact me, and tell me in which projects you are using it. Thank you!
+
 Happy speeding up your django project!
 
 For further information read [django-pjaxr on noxic-action.de](http://www.noxic-action.de/page/programming/django-pjaxr)

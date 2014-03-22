@@ -21,7 +21,7 @@ class PjaxrExtendsNode(ExtendsNode):
             try:
                 namespace = pjaxr_context['pjaxr_namespace']
             except KeyError:
-                self.parent_name = self.pjaxr_template
+                pass  # no namespace given, so do not change parent_name => initial request
             else:
                 if namespace.startswith(self.pjaxr_namespace.resolve(context)):
                     self.parent_name = self.pjaxr_template

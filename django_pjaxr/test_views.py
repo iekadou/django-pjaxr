@@ -42,8 +42,8 @@ class Page1Content1InnerContent1View(PjaxrMixin, TemplateView):
             result.update({'page_string': 'page_1'})
         if self.pjaxr_content:
             result.update({'content_string': 'content_1'})
-        if self.pjaxr_content:
-            result.update({'inner_content_string': 'inner_content_1'})
+        if self.pjaxr_inner_content:
+            result.update({'inner_content_string': 'inner_con_tent_1'})
         return result
 
 
@@ -60,7 +60,7 @@ class Page1Content1InnerContent2View(PjaxrMixin, TemplateView):
         if self.pjaxr_content:
             result.update({'content_string': 'content_1'})
         if self.pjaxr_content:
-            result.update({'inner_content_string': 'inner_content_2'})
+            result.update({'inner_content_string': 'inner_con_tent_2'})
         return result
 
 

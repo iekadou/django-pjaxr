@@ -12,4 +12,4 @@
     {% endblock site %}
     {% block additional_pjax_includes %}{% endblock additional_pjax_includes %}
 </pjaxr-body>
-<pjaxr-namespace>{% block pjaxr_namespace %}{% endblock pjaxr_namespace %}</pjaxr-namespace>
+<pjaxr-namespace>{% block pjaxr_namespace %}{{ namespace }}{% endblock pjaxr_namespace %}</pjaxr-namespace>

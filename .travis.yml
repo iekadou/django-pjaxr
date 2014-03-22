@@ -1,12 +1,14 @@
 language: python
 python:
+  - "2.6"
   - "2.7"
   - "3.2"
   - "3.3"
 
 env:
-  - DJANGO="django==1.5.2 --use-mirrors"
-  - DJANGO="django==1.4.6 --use-mirrors"
+  - DJANGO="django==1.6.2 --use-mirrors"
+  - DJANGO="django==1.5.5 --use-mirrors"
+  - DJANGO="django==1.4.10 --use-mirrors"
 
 notifications:
   email: false

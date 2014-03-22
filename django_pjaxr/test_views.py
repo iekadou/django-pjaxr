@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from mixins import PjaxrMixin
+from django_pjaxr.mixins import PjaxrMixin
 
 
 class Page1View(PjaxrMixin, TemplateView):

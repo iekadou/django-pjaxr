@@ -91,3 +91,12 @@ class Page2View(IekadouPjaxrMixin, TemplateView):
         if self.pjaxr_page:
             result.update({'page_string': 'page_2'})
         return result
+
+
+class NoPjaxrView(TemplateView):
+    template_name = 'tests/no_pjaxr_page.html'
+
+    def get_context_data(self, **kwargs):
+        result = super(NoPjaxrView, self).get_context_data(**kwargs)
+        result.update({'no_pjaxr_page_string': 'no-pjaxr-page'})
+        return result

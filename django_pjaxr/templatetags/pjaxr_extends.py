@@ -40,15 +40,11 @@ def pjaxr_extends(parser, token):
     if nodelist.get_nodes_by_type(PjaxrExtendsNode) or nodelist.get_nodes_by_type(ExtendsNode):
         raise TemplateSyntaxError("'pjaxr_extends' and 'extends' cannot appear more than once in the same template!")
 
-    if len(bits) == 4:
-        pjaxr_template = parser.compile_filter(bits[3])
-    elif len(bits) == 3:
+    if len(bits) > 2:
         try:
             # format DEFAULT_PJAXR_TEMPLATE string to fit into FilterExpression as token
-            pjaxr_template = FilterExpression("'{0}'".format(settings.DEFAULT_PJAXR_TEMPLATE), parser)
+            pjaxr_template = parser.compile_filter(bits[3]) if (len(bits) == 4) else FilterExpression("'{0}'".format(settings.DEFAULT_PJAXR_TEMPLATE), parser)
         except AttributeError:
             raise TemplateSyntaxError("No Pjaxr template set, even no default!")
-
-    if len(bits) > 2:
         return PjaxrExtendsNode(nodelist, parser.compile_filter(bits[1]), parser.compile_filter(bits[2]), pjaxr_template)
     return ExtendsNode(nodelist, parser.compile_filter(bits[1]))

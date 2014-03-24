@@ -1,6 +1,6 @@
 def pjaxr_information(request):
     """
-    passes the pjax head information to the templates
+    passes the pjaxr head information to the templates
     """
 
     response = {

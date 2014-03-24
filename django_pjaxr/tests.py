@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^page1/content1/inner_content2/$',        Page1Content1InnerContent2View.as_view(),            name='inner_content_2'),
     url(r'^page1/content2/$',                       Page1Content2View.as_view(),            name='content_2'),
     url(r'^page2/$',                                Page2View.as_view(),                    name='page_2'),
+    url(r'^no-pjaxr-page/$',                        NoPjaxrView.as_view(),                  name='no_pjaxr_page'),
 )
 
 
@@ -27,6 +28,7 @@ class TestPjaxrRequests(TestCase):
     inner_content_1_string = 'inner_con_tent_1'
     inner_content_2_string = 'inner_con_tent_2'
     page_2_string = 'page_2'
+    no_pjaxr_page_string = 'no-pjaxr-page'
 
     # testing page level namespace
     def test_page_1_no_pjaxr(self):
@@ -168,3 +170,25 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+
+    # testing non pjaxr page
+    def test_non_pjaxr_page(self):
+        client = Client()
+        response = client.get(reverse('no_pjaxr_page'))
+        self.assertContains(response, self.no_pjaxr_page_string)
+        self.assertContains(response, '<html>')
+        self.assertNotContains(response, '<pjaxr-body>')
+
+    def test_non_pjaxr_page_no_namespace(self):
+        client = Client()
+        response = client.get(reverse('no_pjaxr_page'), **{'HTTP_X_PJAX': 'true'})
+        self.assertContains(response, self.no_pjaxr_page_string)
+        self.assertContains(response, '<html>')
+        self.assertNotContains(response, '<pjaxr-body>')
+
+    def test_non_pjaxr_page_with_namespace(self):
+        client = Client()
+        response = client.get(reverse('no_pjaxr_page'), **{'HTTP_X_PJAX': 'true', 'HTTP_X_PJAX_NAMESPACE': 'Site2.Page1.Content1'})
+        self.assertContains(response, self.no_pjaxr_page_string)
+        self.assertContains(response, '<html>')
+        self.assertNotContains(response, '<pjaxr-body>')

@@ -1,24 +1,9 @@
-from django.views.generic import View
-
-
-class PjaxrMixin(View):
+class PjaxrMixin(object):
     """
     View mixin that provides pjaxr functionality
     """
     namespace = ""
-    pjaxr_site = True
-    pjaxr_page = True
-    pjaxr_content = True
-    pjaxr_inner_content = True
-
-    def dispatch(self, request, *args, **kwargs):
-        super(PjaxrMixin, self).__init__()
-        matching_count = self.get_matching_count(request)
-        self.pjaxr_site = matching_count <= 0
-        self.pjaxr_page = matching_count <= 1
-        self.pjaxr_content = matching_count <= 2
-        self.pjaxr_inner_content = matching_count <= 3
-        return super(PjaxrMixin, self).dispatch(request, *args, **kwargs)
+    matching_count = 0
 
     def get_matching_count(self, request):
         """
@@ -45,3 +30,18 @@ class PjaxrMixin(View):
 
     def is_pjaxr_request(self, request):
         return True if request.META.get('HTTP_X_PJAX_NAMESPACE', False) else False
+
+
+class IekadouPjaxrMixin(PjaxrMixin):
+    pjaxr_site = True
+    pjaxr_page = True
+    pjaxr_content = True
+    pjaxr_inner_content = True
+
+    def dispatch(self, request, *args, **kwargs):
+        self.matching_count = self.get_matching_count(request)
+        self.pjaxr_site = self.matching_count <= 0
+        self.pjaxr_page = self.matching_count <= 1
+        self.pjaxr_content = self.matching_count <= 2
+        self.pjaxr_inner_content = self.matching_count <= 3
+        return super(IekadouPjaxrMixin, self).dispatch(request, *args, **kwargs)

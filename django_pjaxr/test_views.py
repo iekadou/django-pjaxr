@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView
-from django_pjaxr.mixins import PjaxrMixin
+
+from django_pjaxr.mixins import IekadouPjaxrMixin
 
 
-class Page1View(PjaxrMixin, TemplateView):
+class Page1View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_1.html'
     namespace = "Site1.Page1"
 
@@ -15,7 +16,7 @@ class Page1View(PjaxrMixin, TemplateView):
         return result
 
 
-class Page1Content1View(PjaxrMixin, TemplateView):
+class Page1Content1View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_1_content_1.html'
     namespace = "Site1.Page1.Content1"
 
@@ -30,7 +31,7 @@ class Page1Content1View(PjaxrMixin, TemplateView):
         return result
 
 
-class Page1Content1InnerContent1View(PjaxrMixin, TemplateView):
+class Page1Content1InnerContent1View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_1_content_1_inner_content_1.html'
     namespace = "Site1.Page1.Content1.InnerContent1"
 
@@ -47,7 +48,7 @@ class Page1Content1InnerContent1View(PjaxrMixin, TemplateView):
         return result
 
 
-class Page1Content1InnerContent2View(PjaxrMixin, TemplateView):
+class Page1Content1InnerContent2View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_1_content_1_inner_content_2.html'
     namespace = "Site1.Page1.Content1.InnerContent2"
 
@@ -64,7 +65,7 @@ class Page1Content1InnerContent2View(PjaxrMixin, TemplateView):
         return result
 
 
-class Page1Content2View(PjaxrMixin, TemplateView):
+class Page1Content2View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_1_content_2.html'
     namespace = "Site1.Page1.Content2"
 
@@ -79,7 +80,7 @@ class Page1Content2View(PjaxrMixin, TemplateView):
         return result
 
 
-class Page2View(PjaxrMixin, TemplateView):
+class Page2View(IekadouPjaxrMixin, TemplateView):
     template_name = 'tests/page_2.html'
     namespace = "Site1.Page2"
 

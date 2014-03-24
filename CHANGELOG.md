@@ -1,6 +1,6 @@
 # django-pjaxr changelog
 
-## master
+## 1.1.0
 
 * Introducing PjaxrMixin to support pre-template pjaxr-logic
 * Extending tests

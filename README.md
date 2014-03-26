@@ -30,7 +30,7 @@ There are just two steps needed to install django-pjaxr:
 
 ## Projects using django-pjaxr
 
-1. [iekadou.com](http://www.iekadou.com/page/)
+1. [iekadou.com](http://www.iekadou.com/)
 2. [socialfunders.org](https://socialfunders.org/)
 3. [minddust.com](https://minddust.com/)
 
@@ -38,4 +38,4 @@ If you are using django-pjaxr, please contact me, and tell me in which projects 
 
 Happy speeding up your django project!
 
-For further information read [django-pjaxr on iekadou.com](http://www.iekadou.com/page/programming/django-pjaxr)
+For further information read [django-pjaxr on iekadou.com](http://www.iekadou.com/programming/django-pjaxr)

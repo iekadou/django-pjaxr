@@ -3,6 +3,7 @@ class PjaxrMixin(object):
     View mixin that provides pjaxr functionality
     """
     namespace = ""
+    parent_namespace = ""
     matching_count = 0
 
     def get_matching_count(self, request):
@@ -30,6 +31,12 @@ class PjaxrMixin(object):
 
     def is_pjaxr_request(self, request):
         return True if request.META.get('HTTP_X_PJAX_NAMESPACE', False) else False
+
+    def get_context_data(self, **kwargs):
+        context = super(PjaxrMixin, self).get_context_data(**kwargs)
+        context.update({'pjaxr_namespace_current': self.namespace})
+        context.update({'pjaxr_namespace_parent': self.parent_namespace})
+        return context
 
 
 class IekadouPjaxrMixin(PjaxrMixin):

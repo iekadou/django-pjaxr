@@ -37,6 +37,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertContains(response, '<html>')
         self.assertNotContains(response, '<pjaxr-body>')
+        self.assertContains(response, 'Site1.Page1')
 
     def test_page_1_pjaxr_with_namespace(self):
         client = Client()
@@ -44,6 +45,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1')
 
     def test_page_1_pjaxr_different_namespace(self):
         client = Client()
@@ -51,6 +53,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1')
 
     def test_page_1_pjaxr_no_namespace(self):
         client = Client()
@@ -58,6 +61,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1')
 
     # testing content level namespace
     def test_content_1_no_pjaxr(self):
@@ -67,6 +71,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertContains(response, '<html>')
         self.assertNotContains(response, '<pjaxr-body>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_current_namespace(self):
         client = Client()
@@ -75,6 +80,7 @@ class TestPjaxrRequests(TestCase):
         self.assertNotContains(response, self.content_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_page_namespace(self):
         client = Client()
@@ -83,6 +89,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_content_namespace(self):
         client = Client()
@@ -91,6 +98,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_different_page_namespace(self):
         client = Client()
@@ -99,6 +107,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_different_site_namespace(self):
         client = Client()
@@ -107,6 +116,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     def test_content_1_pjaxr_no_namespace(self):
         client = Client()
@@ -115,6 +125,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.content_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1')
 
     # testing inner_content level namespace
     def test_inner_content_1_no_pjaxr(self):
@@ -125,6 +136,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertContains(response, '<html>')
         self.assertNotContains(response, '<pjaxr-body>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     def test_inner_content_1_pjaxr_with_namespace(self):
         client = Client()
@@ -134,6 +146,7 @@ class TestPjaxrRequests(TestCase):
         self.assertNotContains(response, self.page_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     def test_inner_content_1_pjaxr_different_content_namespace(self):
         client = Client()
@@ -143,6 +156,7 @@ class TestPjaxrRequests(TestCase):
         self.assertNotContains(response, self.page_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     def test_inner_content_1_pjaxr_different_page_namespace(self):
         client = Client()
@@ -152,6 +166,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertContains(response, '<pjaxr-body>')
         self.assertNotContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     def test_inner_content_1_pjaxr_different_site_namespace(self):
         client = Client()
@@ -161,6 +176,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     def test_inner_content_1_pjaxr_no_namespace(self):
         client = Client()
@@ -170,6 +186,7 @@ class TestPjaxrRequests(TestCase):
         self.assertContains(response, self.page_1_string)
         self.assertNotContains(response, '<pjaxr-body>')
         self.assertContains(response, '<html>')
+        self.assertContains(response, 'Site1.Page1.Content1.InnerContent1')
 
     # testing non pjaxr page
     def test_non_pjaxr_page(self):
